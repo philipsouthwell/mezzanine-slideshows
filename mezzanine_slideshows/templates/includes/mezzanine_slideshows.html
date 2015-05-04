@@ -1,0 +1,39 @@
+{% load mezzanine_tags staticfiles %}
+
+{% for slideshow in slideshows %}
+    {% if slideshow.page.id == page.id %}
+        {% with slideshow.galleries.all as galleries %}
+        {% for gallery in galleries %}
+        <div class="slider col-md-6">
+        <div class="slide-viewer">
+        <h4>{{ gallery.title }}</h4>
+            <div class="slide-group">
+                {% with gallery.images.all as images %}
+                {% for image in images %}
+                    <div class="slide slide-{{ forloop.counter }}">
+                        <a class="mezzanine-slideshows-popup" title="{{ image.description }}"
+                           href="{{ image.file.url }}">
+                            <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail image.file 300 188 padding="True" %}">
+                        </a>
+                    </div>
+
+                {% endfor %}
+                {% endwith %}
+            </div>
+        </div>
+        </div>
+        {% endfor %}
+        {% endwith %}
+    {% endif %}
+{% endfor %}
+
+<script>
+$(document).ready(function() {
+    $('.mezzanine-slideshows-popup').magnificPopup({
+        type: 'image',
+        gallery: {
+            enabled: true
+        }
+    });
+});
+</script>
