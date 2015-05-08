@@ -46,3 +46,6 @@ local_settings.py
 
 # Databases
 *.db
+
+# pypi config file
+.pypirc
