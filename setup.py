@@ -15,9 +15,11 @@ setup(
     license='BSD License',
     description='A simple mezzanine app which allows galleries to be placed at the bottom of pages as a slideshow',
     long_description=README,
-    url='http://www.example.com/',
+    url='https://github.com/philipsouthwell/mezzanine-slideshows',
+    download_url='https://github.com/philipsouthwell/mezzanine-slideshows/tarball/0.2',
     author='Philip Southwell',
     author_email='phil@zoothink.com',
+    keywords=['django', 'mezzanine'],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Mezzanine',
