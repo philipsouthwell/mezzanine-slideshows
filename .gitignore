@@ -49,3 +49,5 @@ local_settings.py
 
 # pypi config file
 .pypirc
+
+mezzanine_slideshows.egg-info
