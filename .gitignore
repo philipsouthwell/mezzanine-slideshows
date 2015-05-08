@@ -42,7 +42,7 @@ target/
 local_settings.py
 
 # Pycharm IDE
-/.idea
+.idea/
 
 # Databases
 *.db
