@@ -78,15 +78,16 @@ Choose to install the set of demonstration pages during the setup process.
 1. In the header of your *base.html* file after ``<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">``
 add the following two lines:
     ```html
-    <link rel="stylesheet" href="{% static "mezzanine-slideshows/css/mezzanine-slideshow.css" %}">
     <link rel="stylesheet" href="{% static "mezzanine/css/magnific-popup.css" %}">
+    <link rel="stylesheet" href="{% static "mezzanine-slideshows/css/simple-slideshow-styles.css" %}">
     ```
 
 1. At the end of your *base.html* file, just after `{% include "includes/footer_scripts.html" %}`, add the following
-two lines:
+three lines:
     ```html
-    <script src="{% static "mezzanine-slideshows/js/mezzanine-slideshow.js" %}"></script>
+    <script src="{% static "mezzanine-slideshows/js/better-simple-slideshow.min.js" %}"></script>
     <script src="{% static "mezzanine-slideshows/js/jquery.magnific-popup.js" %}"></script>
+    <script src="{% static "mezzanine-slideshows/js/mezzanine-slideshow.js" %}"></script>
     ```
 
 1. This step is key. Without it no slideshows will appear. Add the following code to any place you wish a template to 
