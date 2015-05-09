@@ -18,7 +18,10 @@ running the command below:
 
     $ pip install mezzanine_slideshows
 
-##Super Quick start##
+##Super Quick Start##
+
+These instructions will allow you to place Mezzanine Galleries *at the end* of other Mezzanine Pages as slideshows.
+If you wish to place the galleries at any other place please follow the Regular Setup instructions.
 
 1. Create a new Mezzanine project following the [official instructions](http://mezzanine.jupo.org/docs/overview.html#installation).
 Choose to install the set of demonstration pages during the setup process.
@@ -32,11 +35,25 @@ Choose to install the set of demonstration pages during the setup process.
         ...  
         )
 
+1. Run `python manage.py syncdb` to create the mezzanine-slideshows models.
+
+1. Start the development server and visit http://127.0.0.1:8000/admin/ to create a slideshow instance.
+
+1. Navigate to the page on the site to see your gallery displayed after the page text as a slideshow.
+
+
+##Regular Setup##
+
+1. Add mezzanine_slideshows to your INSTALLED_APPS like this:
+
+    INSTALLED_APPS = (  
+        ...  
+        "mezzanine_slideshows"  
+        )
+
 2. Run `python manage.py syncdb` to create the mezzanine-slideshows models.
 
-3. Start the development server and visit http://127.0.0.1:8000/admin/ to create a slideshow instance.
-
-4. Navigate to the page on the site to see your gallery displayed after the page text as a slideshow.
-
-
-##Regular Installation##
+1. In the header of your *base.html* file after ``<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">``
+add the following two lines:
+    <link rel="stylesheet" href="{% static "mezzanine-slideshows/css/mezzanine-slideshow.css" %}">
+    <link rel="stylesheet" href="{% static "mezzanine/css/magnific-popup.css" %}">
