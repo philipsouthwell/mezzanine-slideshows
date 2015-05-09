@@ -4,7 +4,7 @@
     {% if slideshow.page.id == page.id %}
         {% with slideshow.galleries.all as galleries %}
         {% for gallery in galleries %}
-        <div class="col-md-6">
+        <div class="col-md-6 remove-right-left-padding">
             <div class="bss-slides better-simple-slideshow slide-group">
                 {% with gallery.images.all as images %}
                 {% for image in images %}
