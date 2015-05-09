@@ -26,10 +26,10 @@ Choose to install the set of demonstration pages during the setup process.
 1. Add mezzanine_slideshows to your INSTALLED_APPS immediately after your Django apps and before 
    your Mezzanine apps like this:
 
-    INSTALLED_APPS = (
-        ...
-        "mezzanine_slideshows",
-        ...
+    INSTALLED_APPS = (  
+        ...  
+        "mezzanine_slideshows",  
+        ...  
     )
 
 2. Run `python manage.py syncdb` to create the mezzanine-slideshows models.
