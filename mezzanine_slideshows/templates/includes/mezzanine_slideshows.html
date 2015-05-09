@@ -7,16 +7,12 @@
 
 
 
-        <div class="slider col-md-6">
-
-        <div class="slide-viewer">
-
-
+        <div class="col-md-6">
             <div class="bss-slides better-simple-slideshow slide-group">
                 {% with gallery.images.all as images %}
                 {% for image in images %}
                 <figure>
-                    <a class="mezzanine-slideshows-popup" title="{{ image.description }}" href="{{ image.file.url }}">
+                    <a class="thumbnail" title="{{ image.description }}" href="{{ image.file.url }}">
                     <img src="{{ MEDIA_URL }}{% thumbnail image.file 300 188 padding="True" %}" width="100%" />
                     <figcaption>{{ image.description }}</figcaption>
                     </a>
@@ -25,8 +21,6 @@
                 {% endwith %}
             </div>
             <h4>{{ gallery.title }}</h4>
-
-        </div>
         </div>
         {% endfor %}
         {% endwith %}
