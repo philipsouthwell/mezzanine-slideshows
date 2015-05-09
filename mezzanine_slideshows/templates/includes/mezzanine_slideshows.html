@@ -10,13 +10,10 @@
             <div class="slide-group">
                 {% with gallery.images.all as images %}
                 {% for image in images %}
-                    <div class="slide slide-{{ forloop.counter }}">
-                        <a class="mezzanine-slideshows-popup" title="{{ image.description }}"
-                           href="{{ image.file.url }}">
-                            <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail image.file 300 188 padding="True" %}">
-                        </a>
-                    </div>
-
+                <figure>
+                    <img src="{{ MEDIA_URL }}{% thumbnail image.file 300 188 padding="True" %}" width="100%" />
+                    <figcaption>{{ image.description }}</figcaption>
+                </figure>
                 {% endfor %}
                 {% endwith %}
             </div>
@@ -28,12 +25,18 @@
 {% endfor %}
 
 <script>
-$(document).ready(function() {
-    $('.mezzanine-slideshows-popup').magnificPopup({
-        type: 'image',
-        gallery: {
-            enabled: true
-        }
-    });
-});
+    var opts = {
+            //auto-advancing slides? accepts boolean (true/false) or object
+            auto : {
+                // speed to advance slides at. accepts number of milliseconds
+                speed : 2500,
+                // pause advancing on mouseover? accepts boolean
+                pauseOnHover : true
+            },
+            // show fullscreen toggle? accepts boolean
+            fullScreen : true,
+            // support swiping on touch devices? accepts boolean, requires hammer.js
+            swipe : true
+        };
+    makeBSS('.slide-group', opts);
 </script>
