@@ -152,22 +152,7 @@
 {% include "includes/footer_scripts.html" %}
 <script src="{% static "mezzanine-slideshows/js/better-simple-slideshow.min.js" %}"></script>
 <script src="{% static "mezzanine-slideshows/js/jquery.magnific-popup.js" %}"></script>
-<script>
-    var opts = {
-            //auto-advancing slides? accepts boolean (true/false) or object
-            auto : {
-                // speed to advance slides at. accepts number of milliseconds
-                speed : 2500,
-                // pause advancing on mouseover? accepts boolean
-                pauseOnHover : true
-            },
-            // show fullscreen toggle? accepts boolean
-            fullScreen : true,
-            // support swiping on touch devices? accepts boolean, requires hammer.js
-            swipe : true
-        };
-    makeBSS('.better-simple-slideshow', opts);
-</script>
+<script src="{% static "mezzanine-slideshows/js/mezzanine-slideshow.js" %}"></script>
 
 </body>
 </html>
