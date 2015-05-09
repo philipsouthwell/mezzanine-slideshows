@@ -55,5 +55,5 @@ Choose to install the set of demonstration pages during the setup process.
 
 1. In the header of your *base.html* file after ``<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">``
 add the following two lines:
-    <link rel="stylesheet" href="{% static "mezzanine-slideshows/css/mezzanine-slideshow.css" %}">
-    <link rel="stylesheet" href="{% static "mezzanine/css/magnific-popup.css" %}">
+    \<link rel="stylesheet" href="{% static "mezzanine-slideshows/css/mezzanine-slideshow.css" %}"\>
+    \<link rel="stylesheet" href="{% static "mezzanine/css/magnific-popup.css" %}"\>
