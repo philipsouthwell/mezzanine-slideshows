@@ -51,3 +51,4 @@ local_settings.py
 .pypirc
 
 mezzanine_slideshows.egg-info/
+dist/
