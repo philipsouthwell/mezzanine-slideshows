@@ -26,8 +26,8 @@ If you wish to place the galleries at any other place please follow the Regular 
 1. Create a new Mezzanine project following the [official instructions](http://mezzanine.jupo.org/docs/overview.html#installation).
 Choose to install the set of demonstration pages during the setup process.
 
-1. Add mezzanine_slideshows to your INSTALLED_APPS immediately after your Django apps and before 
-   your Mezzanine apps like this:
+1. Add mezzanine_slideshows to INSTALLED_APPS in settings.py immediately after your Django apps and before 
+   your Mezzanine apps:
 
     ```python
     INSTALLED_APPS = (
@@ -37,7 +37,16 @@ Choose to install the set of demonstration pages during the setup process.
         )
     ```
 
-1. Run `python manage.py syncdb` to create the mezzanine-slideshows models.
+1. Add the following to TEMPLATE_CONTEXT_PROCESSORS in settings.py:
+
+    ```python
+    TEMPLATE_CONTEXT_PROCESSORS = (
+        ...
+        "mezzanine_slideshows.context_processors.get_slideshows"
+        )
+    ``` 
+
+1. Run `python manage.py migrate mezzanine_slideshows` to create the mezzanine-slideshows models.
 
 1. Start the development server and visit http://127.0.0.1:8000/admin/ to create a slideshow instance.
 
@@ -46,7 +55,7 @@ Choose to install the set of demonstration pages during the setup process.
 
 ##Regular Setup##
 
-1. Add mezzanine_slideshows to your INSTALLED_APPS like this:
+1. Add mezzanine_slideshows as an app in your project like this:
 
     ```python
     INSTALLED_APPS = (
@@ -55,7 +64,16 @@ Choose to install the set of demonstration pages during the setup process.
         )
     ```
 
-1. Run `python manage.py syncdb` to create the mezzanine-slideshows models.
+1. Add the following template context processor in settings.py:
+
+    ```python
+    TEMPLATE_CONTEXT_PROCESSORS = (
+        ...
+        "mezzanine_slideshows.context_processors.get_slideshows"
+        )
+    ``` 
+
+1. Run `python manage.py migrate mezzanine_slideshows` to create the mezzanine-slideshows models.
 
 1. In the header of your *base.html* file after ``<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">``
 add the following two lines:
