@@ -21,7 +21,6 @@ setup(
     keywords=['django', 'mezzanine'],
     classifiers=[
         'Environment :: Web Environment',
-        'Framework :: Mezzanine',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
