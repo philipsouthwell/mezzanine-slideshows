@@ -4,9 +4,15 @@
     {% if slideshow.page.id == page.id %}
         {% with slideshow.galleries.all as galleries %}
         {% for gallery in galleries %}
-        <div class="col-md-6">
-        <h4>{{ gallery.title }}</h4>
-            <div class="bss-slides better-simple-slideshow">
+
+
+
+        <div class="slider col-md-6">
+
+        <div class="slide-viewer">
+
+
+            <div class="bss-slides better-simple-slideshow slide-group">
                 {% with gallery.images.all as images %}
                 {% for image in images %}
                 <figure>
@@ -18,6 +24,9 @@
                 {% endfor %}
                 {% endwith %}
             </div>
+            <h4>{{ gallery.title }}</h4>
+
+        </div>
         </div>
         {% endfor %}
         {% endwith %}
