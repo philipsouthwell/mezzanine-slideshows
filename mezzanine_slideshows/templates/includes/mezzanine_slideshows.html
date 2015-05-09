@@ -10,7 +10,7 @@
                 {% for image in images %}
                 <figure>
                     <a class="mezzanine-slideshows-popup" title="{{ image.description }}" href="{{ image.file.url }}">
-                    <img src="{{ MEDIA_URL }}{% thumbnail image.file 300 188 padding="True" %}" width="100%" />
+                    <img src="{{ MEDIA_URL }}{% thumbnail image.file 300 188 padding="False" %}" width="100%" />
                     <figcaption>{{ image.description }}</figcaption>
                     </a>
                 </figure>
