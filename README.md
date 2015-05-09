@@ -29,11 +29,13 @@ Choose to install the set of demonstration pages during the setup process.
 1. Add mezzanine_slideshows to your INSTALLED_APPS immediately after your Django apps and before 
    your Mezzanine apps like this:
 
-    INSTALLED_APPS = (  
-        ...  
-        "mezzanine_slideshows",  
-        ...  
+    ```python
+    INSTALLED_APPS = (
+        ...
+        "mezzanine_slideshows",
+        ...
         )
+    ```
 
 1. Run `python manage.py syncdb` to create the mezzanine-slideshows models.
 
@@ -57,7 +59,7 @@ Choose to install the set of demonstration pages during the setup process.
 
 1. In the header of your *base.html* file after ``<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">``
 add the following two lines:
-```html
-<link rel="stylesheet" href="{% static "mezzanine-slideshows/css/mezzanine-slideshow.css" %}">
-<link rel="stylesheet" href="{% static "mezzanine/css/magnific-popup.css" %}">
-```
+    ```html
+    <link rel="stylesheet" href="{% static "mezzanine-slideshows/css/mezzanine-slideshow.css" %}">
+    <link rel="stylesheet" href="{% static "mezzanine/css/magnific-popup.css" %}">
+    ```
