@@ -6,7 +6,7 @@
         {% for gallery in galleries %}
         <div class="col-md-6">
         <h4>{{ gallery.title }}</h4>
-            <div class="better-simple-slideshow">
+            <div class="bss-slides better-simple-slideshow">
                 {% with gallery.images.all as images %}
                 {% for image in images %}
                 <figure>
