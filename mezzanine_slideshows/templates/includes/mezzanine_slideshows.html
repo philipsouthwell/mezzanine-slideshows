@@ -4,15 +4,12 @@
     {% if slideshow.page.id == page.id %}
         {% with slideshow.galleries.all as galleries %}
         {% for gallery in galleries %}
-
-
-
         <div class="col-md-6">
             <div class="bss-slides better-simple-slideshow slide-group">
                 {% with gallery.images.all as images %}
                 {% for image in images %}
                 <figure>
-                    <a class="thumbnail" title="{{ image.description }}" href="{{ image.file.url }}">
+                    <a class="mezzanine-slideshows-popup" title="{{ image.description }}" href="{{ image.file.url }}">
                     <img src="{{ MEDIA_URL }}{% thumbnail image.file 300 188 padding="True" %}" width="100%" />
                     <figcaption>{{ image.description }}</figcaption>
                     </a>
@@ -26,3 +23,14 @@
         {% endwith %}
     {% endif %}
 {% endfor %}
+
+<script>
+$(document).ready(function() {
+    $('.mezzanine-slideshows-popup').magnificPopup({
+        type: 'image',
+        gallery: {
+            enabled: true
+        }
+    });
+});
+</script>
