@@ -16,7 +16,6 @@ setup(
     description='A simple mezzanine app which allows the placement of a mezzanine Gallery within any other mezzanine Page as a slideshow ',
     long_description=README,
     url='https://github.com/philipsouthwell/mezzanine-slideshows',
-    download_url='https://github.com/philipsouthwell/mezzanine-slideshows/tarball/0.2',
     author='Philip Southwell',
     author_email='phil@zoothink.com',
     keywords=['django', 'mezzanine'],
