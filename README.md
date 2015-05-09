@@ -30,7 +30,7 @@ Choose to install the set of demonstration pages during the setup process.
         ...  
         "mezzanine_slideshows",  
         ...  
-    )
+        )
 
 2. Run `python manage.py syncdb` to create the mezzanine-slideshows models.
 
