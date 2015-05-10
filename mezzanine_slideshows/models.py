@@ -11,7 +11,6 @@ class Slideshow(models.Model):
     class Meta:
         verbose_name = "Slideshow"
         verbose_name_plural = "Slideshows"
-        app_label = "Slideshows"
 
     def __str__(self):
         return self.title
