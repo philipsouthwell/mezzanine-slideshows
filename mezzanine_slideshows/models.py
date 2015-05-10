@@ -13,4 +13,4 @@ class Slideshow(models.Model):
         verbose_name_plural = "Slideshows"
 
     def __str__(self):
-        return self.title
+        return self.page.title
