@@ -5,7 +5,7 @@
         {% with slideshow.galleries.all as galleries %}
         {% for gallery in galleries %}
         <div class="col-md-6 remove-right-left-padding">
-            <div class="bss-slides better-simple-slideshow slide-group">
+            <div class="bss-slides better-simple-slideshow{{ gallery.id }} slide-group">
                 {% with gallery.images.all as images %}
                 {% for image in images %}
                 <figure>
@@ -19,18 +19,17 @@
             </div>
             <h4>{{ gallery.title }}</h4>
         </div>
+        <script>
+        $(document).ready(function() {
+            $('.mezzanine-slideshows-popup').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        });
+        </script>
         {% endfor %}
         {% endwith %}
     {% endif %}
 {% endfor %}
-
-<script>
-$(document).ready(function() {
-    $('.mezzanine-slideshows-popup').magnificPopup({
-        type: 'image',
-        gallery: {
-            enabled: true
-        }
-    });
-});
-</script>
