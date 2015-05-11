@@ -9,7 +9,7 @@
                 {% with gallery.images.all as images %}
                 {% for image in images %}
                 <figure>
-                    <a class="mezzanine-slideshows-popup" title="{{ image.description }}" href="{{ image.file.url }}">
+                    <a class="mezzanine-slideshows-popup{{ gallery.id }}" title="{{ image.description }}" href="{{ image.file.url }}">
                     <img src="{{ MEDIA_URL }}{% thumbnail image.file 300 188 %}" width="100%" />
                     <figcaption>{{ image.description }}</figcaption>
                     </a>
@@ -21,7 +21,7 @@
         </div>
         <script>
         $(document).ready(function() {
-            $('.mezzanine-slideshows-popup').magnificPopup({
+            $('.mezzanine-slideshows-popup{{ gallery.id }}').magnificPopup({
                 type: 'image',
                 gallery: {
                     enabled: true
