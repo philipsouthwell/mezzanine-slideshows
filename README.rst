@@ -114,7 +114,7 @@ Regular Setup
 
 
 6. This step is key. Without it no slideshows will appear. Add the following code to any place
-   you wish a template to check whether a slideshow should be displayed, and then display it:
+   you wish a template to check whether a slideshow should be displayed:
 
    .. code:: html
 
