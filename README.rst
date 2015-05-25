@@ -22,7 +22,7 @@ The easiest method is to install directly from pypi using
 
 ::
 
-    $ pip install mezzanine_slideshows
+    $ pip install mezzanine-slideshows
 
 Super Quick Start
 -----------------
