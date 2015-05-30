@@ -11,8 +11,9 @@ Requirements
 mezzanine-slideshows requires that the following python apps be
 installed:
 
+-  Python 3.4
 -  Mezzanine 3.1 (and its dependencies)
--  South - for database migrations (optional)
+-  Django 1.7 +  (this app uses the django migrations framework)
 
 Installation
 ------------
@@ -95,7 +96,8 @@ Regular Setup
    .. code:: html
 
        <link rel="stylesheet" href="{% static "mezzanine/css/magnific-popup.css" %}">
-       <link rel="stylesheet" href="{% static "mezzanine-slideshows/css/simple-slideshow-styles.css" %}">
+       <link rel="stylesheet" href="{% static "mezzanine-slideshows/css/owl.carousel.css" %}">
+       <link rel="stylesheet" href="{% static "mezzanine-slideshows/css/owl.theme.css" %}">
 
 
 5. At the end of your *base.html* file, just after
@@ -108,13 +110,13 @@ Regular Setup
 
    .. code:: html
 
-        <script src="{% static "mezzanine-slideshows/js/better-simple-slideshow.min.js" %}"></script>
+        <script src="{% static "mezzanine-slideshows/js/owl.carousel.js" %}"></script>
         <script src="{% static "mezzanine-slideshows/js/jquery.magnific-popup.js" %}"></script>
-        {% include "includes/mezzanine-slideshows-js.html" %}
 
 
 6. This step is key. Without it no slideshows will appear. Add the following code to any place
-   you wish a template to check whether a slideshow should be displayed:
+   you wish a template to check whether a slideshow should be displayed. If a slideshow is dues
+   to show on that page it will be displayed at that place in the template:
 
    .. code:: html
 

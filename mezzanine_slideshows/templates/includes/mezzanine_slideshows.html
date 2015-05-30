@@ -3,32 +3,43 @@
 {% for slideshow in slideshows %}
     {% if slideshow.page.id == page.id %}
         {% with slideshow.gallery as gallery %}
-        <div class="col-md-6 remove-right-left-padding">
-            <div class="bss-slides better-simple-slideshow slide-group">
-                {% with gallery.images.all as images %}
-                {% for image in images %}
-                <figure>
-                    <a class="mezzanine-slideshows-popup" title="{{ image.description }}" href="{{ image.file.url }}">
-                    <img src="{{ MEDIA_URL }}{% thumbnail image.file 300 188 %}" width="100%" />
-                    <figcaption>{{ image.description }}</figcaption>
-                    </a>
-                </figure>
-                {% endfor %}
-                {% endwith %}
+            {% with gallery.images.all as images %}
+            <div class="home-gallery row">
+                <div class="col-md-12">
+                    <h4>{{ gallery.title }}</h4>
+                    <p>{{ gallery.description }}</p>
+                    <div id="owl-homepage" class="owl-carousel">
+                        {% for image in images %}
+                        <div>
+                            <a class="mezzanine-slideshows-popup" rel="#image-{{ image.id }}" title="{{ image.description }}" href="{{ image.file.url }}">
+                            <img class="img-responsive thumbnail" src="{{ MEDIA_URL }}{% thumbnail image.file 320 200 %}">
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
-            <h4>{{ gallery.title }}</h4>
-            <p>{{ gallery.description }}</p>
-        </div>
-        <script>
-        $(document).ready(function() {
-            $('.mezzanine-slideshows-popup').magnificPopup({
-                type: 'image',
-                gallery: {
-                    enabled: true
-                }
-            });
-        });
-        </script>
+            {% endwith %}
+            <script>
+                $(document).ready(function() {
+                    $("#owl-homepage").owlCarousel({
+                        autoPlay: true,
+                        mouseDrag: false,
+                        pagination: false,
+                        items: 4,
+                        navigation: true,
+                        scrollPerPage: true
+                    });
+                });
+                $(document).ready(function() {
+                    $('.mezzanine-slideshows-popup').magnificPopup({
+                        type: 'image',
+                        gallery: {
+                            enabled: true
+                        }
+                    });
+                });
+            </script>
         {% endwith %}
     {% endif %}
 {% endfor %}
