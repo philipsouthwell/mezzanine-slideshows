@@ -23,12 +23,14 @@
             <script>
                 $(document).ready(function() {
                     $("#owl-homepage").owlCarousel({
+                        slideSpeed : 500,
+                        paginationSpeed: 1200,
                         autoPlay: true,
                         mouseDrag: false,
                         pagination: false,
                         items: 4,
                         navigation: true,
-                        scrollPerPage: true
+                        scrollPerPage: false
                     });
                 });
                 $(document).ready(function() {
