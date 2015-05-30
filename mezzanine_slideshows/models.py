@@ -6,7 +6,11 @@ from mezzanine.galleries.models import Gallery
 
 class Slideshow(models.Model):
     page = models.OneToOneField(RichTextPage)
-    galleries = models.ManyToManyField(Gallery)
+    gallery = models.ForeignKey(Gallery)
+    slideshow_title = models.CharField(max_length=30, blank=True,
+                                       help_text="A brief description of the slideshow")
+    slideshow_description = models.TextField(max_length=100, blank=True,
+                                             help_text="A fuller description of the slideshow")
 
     class Meta:
         verbose_name = "Slideshow"

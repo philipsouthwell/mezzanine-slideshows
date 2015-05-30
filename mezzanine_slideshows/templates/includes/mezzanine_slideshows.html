@@ -2,14 +2,13 @@
 
 {% for slideshow in slideshows %}
     {% if slideshow.page.id == page.id %}
-        {% with slideshow.galleries.all as galleries %}
-        {% for gallery in galleries %}
+        {% with slideshow.gallery as gallery %}
         <div class="col-md-6 remove-right-left-padding">
-            <div class="bss-slides better-simple-slideshow{{ gallery.id }} slide-group">
+            <div class="bss-slides better-simple-slideshow slide-group">
                 {% with gallery.images.all as images %}
                 {% for image in images %}
                 <figure>
-                    <a class="mezzanine-slideshows-popup{{ gallery.id }}" title="{{ image.description }}" href="{{ image.file.url }}">
+                    <a class="mezzanine-slideshows-popup" title="{{ image.description }}" href="{{ image.file.url }}">
                     <img src="{{ MEDIA_URL }}{% thumbnail image.file 300 188 %}" width="100%" />
                     <figcaption>{{ image.description }}</figcaption>
                     </a>
@@ -18,10 +17,11 @@
                 {% endwith %}
             </div>
             <h4>{{ gallery.title }}</h4>
+            <p>{{ gallery.description }}</p>
         </div>
         <script>
         $(document).ready(function() {
-            $('.mezzanine-slideshows-popup{{ gallery.id }}').magnificPopup({
+            $('.mezzanine-slideshows-popup').magnificPopup({
                 type: 'image',
                 gallery: {
                     enabled: true
@@ -29,7 +29,6 @@
             });
         });
         </script>
-        {% endfor %}
         {% endwith %}
     {% endif %}
 {% endfor %}
