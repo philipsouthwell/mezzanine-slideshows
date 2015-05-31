@@ -95,9 +95,9 @@ Regular Setup
 
    .. code:: html
 
-       <link rel="stylesheet" href="\{% static "mezzanine\/css\/magnific-popup\\\.css\\" \%\}\">
-       <link rel="stylesheet" href="\{% static "mezzanine-slideshows\/css\/owl\.carousel\.css\" \%\}\">
-       <link rel="stylesheet" href="\{% static "mezzanine-slideshows\/css\/owl.theme.css" \%\}\">
+       <link rel="stylesheet" href="{% static "mezzanine/css/magnific-popup.css" %}">
+       <link rel="stylesheet" href="{% static "mezzanine-slideshows/css/owl.carousel.css" %}">
+       <link rel="stylesheet" href="{% static "mezzanine-slideshows/css/owl.theme.css" %}">
 
 
 5. At the end of your *base.html* file, just after
@@ -110,8 +110,8 @@ Regular Setup
 
    .. code:: html
 
-        <script src="{% static "mezzanine-slideshows\/js\/owl\.carousel\.js\" \%\}\"></script>
-        <script src="{% static "mezzanine-slideshows\/js\/jquery\.magnific-popup\.js\" \%\}\"></script>
+        <script src="{% static "mezzanine-slideshows/js/owl.carousel.js" %}"></script>
+        <script src="{% static "mezzanine-slideshows/js/jquery.magnific-popup.js" %}"></script>
 
 
 6. This step is key. Without it no slideshows will appear. Add the following code to any place
