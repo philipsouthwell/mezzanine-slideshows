@@ -6,8 +6,8 @@
             {% with gallery.images.all as images %}
             <div class="home-gallery row">
                 <div class="col-md-12">
-                    <h4>{{ sildeshow.title }}</h4>
-                    <p>{{ slideshow.description }}</p>
+                    <h3>{{ slideshow.slideshow_title }}</h3>
+                    <p>{{ slideshow.slideshow_description }}</p>
                     <div id="owl-homepage" class="owl-carousel">
                         {% for image in images %}
                         <div>
