@@ -9,11 +9,11 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='mezzanine-slideshows',
-    version='0.2.3',
+    version='0.3.0',
     packages=['mezzanine_slideshows'],
     include_package_data=True,
     license='BSD License',
-    description='A simple mezzanine app which allows the placement of Mezzanine Galleries within other Mezzanine Pages as slideshows',
+    description='A simple mezzanine app which allows the placement of a Mezzanine Gallery within another Mezzanine Page as a slideshow',
     long_description=README,
     url='https://github.com/philipsouthwell/mezzanine-slideshows',
     author='Philip Southwell',
