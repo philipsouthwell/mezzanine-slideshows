@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='mezzanine-slideshows',
-    version='0.3.1',
+    version='0.3.2',
     packages=['mezzanine_slideshows'],
     include_package_data=True,
     license='BSD License',
